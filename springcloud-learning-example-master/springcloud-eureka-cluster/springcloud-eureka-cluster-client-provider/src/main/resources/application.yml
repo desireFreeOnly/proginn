@@ -1,0 +1,11 @@
+server:
+  port: 8080 # 服务端口
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.14.248:8888/eureka/,http://192.168.14.248:8889/eureka/
+
+spring:
+  application:
+    name: cluster-provider-service
