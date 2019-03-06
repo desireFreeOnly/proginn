@@ -1,0 +1,17 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8888/eureka/ # 服务注册中心地址
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      uri: http://localhost:8085/
+      profile: dev
+      label: master
+server:
+  port: 8084 # 服务端口
+management:
+  security:
+    enabled: false     #SpringBoot 1.5.X 以上默认开通了安全认证，如果不关闭会要求权限

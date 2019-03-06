@@ -1,0 +1,20 @@
+server:
+  port: 8085 # 服务端口
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8888/eureka/ # 服务注册中心地址
+
+spring:
+  application:
+    name: config-server # 注册中心应用名称
+  cloud:
+    config:
+      server:
+        git:    
+          uri: https://gitee.com/ZiYou-ChuangYi/springcloud-example.git
+          search-paths: # 搜索目录
+            - config
+      label: master
+              

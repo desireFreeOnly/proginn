@@ -1,0 +1,15 @@
+1.启动报错，如：could not resolve placeholder 'position' in value "${position}" 类似这样的问题，一般都是配置文件没有配置好
+Git上的配置文件，格式不对就报错
+config-client-dev.yml
+name: zkh
+2.配置文件名字的命名规则
+spring.application.name：对应文件规则的 “应用名”
+spring.cloud.config.profile：对应“环境名”
+spring.cloud.config.label：对应“分支名”
+spring.cloud.config.uri：对应Config Server开放的地址
+Config支持我们使用的请求的参数规则为：
+/ { 应用名 } / { 环境名 } [ / { 分支名 } ]
+/ { 应用名 } - { 环境名 }.yml
+/ { 应用名 } - { 环境名 }.properties
+/ { 分支名 } / { 应用名 } - { 环境名 }.yml
+/ { 分支名 } / { 应用名 } - { 环境名 }.properties
