@@ -3,6 +3,7 @@ package org.spring.springcloud.web;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
@@ -26,5 +27,10 @@ public class CustomerController {
                 String.class).getBody();
 
         return "Hello,Customer! msg from provider : <br/><br/> " + providerMsg;
+    }
+    
+    @GetMapping("/hello")
+    public String hello(String name) {
+        return "hi," + name + ",this is springcloud-euraka-client-customer ";
     }
 }
