@@ -1,0 +1,6 @@
+1.http://127.0.0.1:8086/demo/hello?name=oKong与http://127.0.0.1:8888/myDemo/hello?name=oKong 效果和上面直接方式是一样的，最后都是访问/demo/**api地址的。
+
+2.http://127.0.0.1:8086/myapi/hello?name=oKong 和 http://127.0.0.1:8086/eureka/hello?name=oKong 最后效果都是一样的，都是访问http://127.0.0.1:8081/hello?name=oKong
+直接以默认形式访问:http://127.0.0.1:8888/customer-service/hello?name=oKong 最后效果也是一样的。
+
+3.Zuul是Netflix开源的微服务网关，可以和Eureka、Ribbon、Hystrix等组件配合使用，Spring Cloud对Zuul进行了整合与增强，Zuul的主要功能是路由转发和过滤器。

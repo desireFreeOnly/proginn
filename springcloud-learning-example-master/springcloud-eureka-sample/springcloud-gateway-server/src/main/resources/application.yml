@@ -1,0 +1,30 @@
+server:
+  port: 8086 # 服务端口
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8888/eureka/ # 服务注册中心地址
+  instance:
+    prefer-ip-address: true  ## 启用ip配置 这样在注册中心列表中看见的是以ip+端口呈现的
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}  ## 实例名称  最后呈现地址：ip:15678
+    
+spring:
+  application:
+    name: zuul-server # 注册中心应用名称
+    
+## 路由规则
+## 传统路由配置：不依赖服务发现。
+## 所有以myapi开头的url路由至http://127.0.0.1:8081/下
+## 如http://127.0.0.1:8086/myapi/hello --> http://127.0.0.1:8081/hello
+zuul:
+  routes:
+    myApi:
+      path: /myapi/**
+      url: http://127.0.0.1:8081
+    myDemo: #forward模式 直接转发至zuul提供的rest服务
+      path: /myDemo/**
+      url:  forward:/demo
+    myEureka:  ## 服务发现模式
+      path: /eureka/**
+      service-id: customer-service
