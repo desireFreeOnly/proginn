@@ -1,5 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<name>springcloud :: Eureka Sample</name>
 
@@ -16,6 +16,11 @@
 		<module>springcloud-eureka-client-provider</module>
 		<!-- Spring Cloud 服务消费者 -->
 		<module>springcloud-eureka-client-customer</module>
-	</modules>
-
+		<!-- Spring Cloud 配置服务 -->
+		<module>springcloud-config-server</module>
+        <!-- Spring Cloud 网关服务 -->
+        <module>springcloud-gateway-server</module>
+        <!-- Spring Cloud 配置服务客户端 -->
+        <module>springcloud-config-client</module>
+  </modules>
 </project>
