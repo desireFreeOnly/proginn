@@ -22,5 +22,8 @@
         <module>springcloud-gateway-server</module>
         <!-- Spring Cloud 配置服务客户端 -->
         <module>springcloud-config-client</module>
-  </modules>
+        <!-- Spring Cloud 客户端负载均衡Ribbon -->
+        <module>springcloud-eureka-consumer-ribbon</module>
+        <module>springcloud-eureka-client-provider-second</module>
+	</modules>
 </project>
