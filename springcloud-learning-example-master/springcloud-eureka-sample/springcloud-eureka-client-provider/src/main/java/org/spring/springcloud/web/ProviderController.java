@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.client.serviceregistry.Registration;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -34,7 +35,13 @@ public class ProviderController {
                 + ", service_id = " + instance.getServiceId());
         return "Hello,Provider!";
     }
-
+    
+    @GetMapping("/hello")
+    public String hello(String name){
+    	System.out.println("springcloud-eureka-client-provider服务被调用，参数name值为:"+name);
+    	return name+",this is springcloud-eureka-client-provider";
+    }
+    
     /**
      * 获取当前服务的服务实例
      *
